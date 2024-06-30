@@ -5,6 +5,13 @@ from django.views.generic import ListView
 from .models import Post
 from .forms import PostBasedForm, PostModelForm, PostDetailForm, PostCreateForm, PostUpdateForm
 
+from rest_framework.viewsets import ModelViewSet
+from .serializers import PostModelSerializer
+
+class PostModelViewSet(ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostModelSerializer
+
 def index(request):
     return render(request, 'index.html')
 
