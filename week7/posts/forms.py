@@ -5,6 +5,11 @@ from .models import Post # Post 모델 import
 class PostBasedForm(forms.Form):
     image = forms.ImageField()
     content = forms.CharField(widget=forms.Textarea)
+    CATEGORY_CHOICES=[
+        ('1', '일반'),
+        ('2', '계정'),
+    ]
+    category = forms.ChoiceField(choices=CATEGORY_CHOICES)
 
 # Model Forms
 class PostModelForm(forms.ModelForm):
