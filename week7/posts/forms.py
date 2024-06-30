@@ -4,7 +4,7 @@ from .models import Post # Post 모델 import
 
 class PostBasedForm(forms.Form):
     image = forms.ImageField()
-    content = forms.CharField()
+    content = forms.CharField(widget=forms.Textarea)
 
 # Model Forms
 class PostModelForm(forms.ModelForm):
