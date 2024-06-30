@@ -9,6 +9,7 @@
   enctype="multipart/form-data"
 >
   {% csrf_token %}
+  <div>{{form.as_p}}</div>
   <div>
     <input type="submit" />
   </div>
